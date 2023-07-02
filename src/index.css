@@ -1,0 +1,27 @@
+body {
+  background-image: url("/src/assets/images/grain-background.png");
+  background-color: black !important;
+}
+
+:root {
+  /* Colors */
+  --tn-lighter-main: #515152;
+  --tn-primary: #8c52ff;
+  --tn-secondary: #fff;
+  --tn-mid-grey: #666;
+  --tn-light-grey: #bbb;
+  --tn-lighter-grey: #edeef5;
+  --tn-main-bg-color: #1c1c1c;
+  --tn-menu-bg-color: #101010;
+  --tn--bg--light: #ffffff;
+
+  --tn-text-color: #b4b4b4;
+  --tn--text--light: #1b232a;
+
+  --box--shadow--large: 0px 0px 50px 25px black;
+  --box--shadow--small: 0 10px 30px 5px black;
+
+  --tn-tansition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
+  --tn-hover-overlay-light: rgba(85, 92, 105, 0.3);
+  --tn-hover-overlay-dark: #1c1c1c91;
+}
