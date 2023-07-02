@@ -56,7 +56,7 @@
 }
 
 .tdl-items-container > div {
-  width: 75%;
+  width: 80%;
 }
 
 .tdl-item {
@@ -66,14 +66,20 @@
   width: 100%;
   border: 2px solid var(--tn-primary);
   border-radius: 5px 10px;
-  padding: 10px 15px;
+  padding: 10px 80px 10px 15px;
   margin-bottom: 20px;
   cursor: pointer;
   font-size: 20px;
+  word-wrap: break-word;
+  white-space:pre-wrap;
 }
 
 .tdl-item p{
   margin: 0;
+}
+
+.tdl-item-text {
+  max-width: 100%;
 }
 
 .completed {
@@ -92,12 +98,14 @@
 
 .tdl-item-icons {
   position: absolute;
-  top: 10px;
+  top: 0;
   right: 10px;
   color: var(--tn-secondary);
   width: 60px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  height: 100%;
 }
 
 .tdl-item-icons i{
@@ -113,6 +121,18 @@
   cursor: pointer;
 }
 
-.bi-trash {
+.bi-trash, .bi-pencil-square {
   font-size: 23px;
+}
+
+.tdl-item-icons.editable > .bi{
+  font-size: 30px;
+}
+
+.tdl-item-icons.editable > .bi-check{
+  color: rgb(32, 185, 32);
+}
+
+.tdl-item-icons.editable > .bi-x{
+  color: red;
 }

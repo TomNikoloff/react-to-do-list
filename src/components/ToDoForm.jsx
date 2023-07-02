@@ -8,12 +8,15 @@ export const ToDoForm = ({addToDo}) => {
   };
 
   const handleClick = (e) => {
-    //console.log(value);
+    
     e.preventDefault();
 
-    addToDo(value);
+    if(value){
+      addToDo(value);
 
-    setValue('');
+      setValue('');
+    }
+
   };
 
   return (
@@ -24,6 +27,7 @@ export const ToDoForm = ({addToDo}) => {
             type="text"
             className="list-input w-100"
             placeholder="Add new list item ..."
+            maxLength="60"
             name="newItem"
             onChange={handleChange}
             value={value}

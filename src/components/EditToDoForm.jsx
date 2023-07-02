@@ -1,30 +1,58 @@
 import { useState } from 'react';
 
-export const EditToDoForm = ({editToDo, todo}) => {
+export const EditToDoForm = ({editTask, todo}) => {
   const [value, setValue] = useState(todo.task);
 
   const handleChange = (e) => {
     setValue(e.target.value);
   };
 
-  const handleClick = (e) => {
+  const saveChanges = (e) => {
     //console.log(value);
     e.preventDefault();
 
-    editToDo(value, todo.id);
+    editTask(value, todo.id);
 
     setValue('');
   };
 
+  const cancelEdit = (e) => {
+
+    e.preventDefault();
+
+    editTask(todo.task, todo.id);
+
+    setValue('');
+  }
+
   return (
     <>
+      <div className="position-relative">
+          <div className={`${todo.completed ? `completed tdl-item`: `tdl-item`}`} >
+          <input
+            type="text"
+            className="list-input w-100"
+            placeholder="Update task"
+            name="updateItem"
+            maxLength="60"
+            onChange={handleChange}
+            value={value}
+          />
+          </div>
+          <div className="tdl-item-icons editable">
+              <i onClick={saveChanges} className="bi bi-check"></i>
+              <i onClick={cancelEdit} className="bi bi-x"></i>
+          </div>
+      </div>
+      {/*
       <div className="d-flex justify-content-center">
-        <div className="d-flex justify-content-center align-items-center w-75 mb-3">
+        <div className="d-flex justify-content-center align-items-center w-100 mb-3">
           <input
             type="text"
             className="list-input w-100"
             placeholder="Update task"
             name="newItem"
+            maxLength="60"
             onChange={handleChange}
             value={value}
           />
@@ -40,6 +68,7 @@ export const EditToDoForm = ({editToDo, todo}) => {
           </div>
         </div>
       </div>
+      */}
     </>
   );
 };

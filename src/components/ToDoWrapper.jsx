@@ -39,16 +39,24 @@ export default function ToDoWrapper() {
           length 60 characters.
         </p>
         <p className="text-white">
-          Click any list item to mark as{' '}
+          Click on any list item to mark as{' '}
           <span className="strike-through">
             <span className="tdl-complete">complete</span>
           </span>.
         </p>
         <p className="text-white">
-          Click the{' '}
+          Click on the
+          {' '}
           <span>
-          <i className="bi bi-trash"></i>
-          </span>{' '}
+            <i className="bi bi-pencil-square"></i>
+          </span>
+          {' '}
+          to edit or on the
+          {' '}
+          <span>
+            <i className="bi bi-trash"></i>
+          </span>
+          {' '}
           to remove an item from the list.
         </p>
       </div>
@@ -57,9 +65,9 @@ export default function ToDoWrapper() {
         <div>
         {todos.map((todo, index) => (
           todo.isEditing ? (
-            <EditToDoForm editToDo={editTask} todo={todo} />
+            <EditToDoForm editTask={editTask} todo={todo} key={todo.id} />
           ) : (
-            <ToDoItem todo={todo} key={index} deleteToDo={deleteToDo} toggleComplete={toggleComplete} editToDo={editToDo}/>
+            <ToDoItem todo={todo} key={todo.id} deleteToDo={deleteToDo} toggleComplete={toggleComplete} editToDo={editToDo}/>
           )
         ))}
         </div>        
