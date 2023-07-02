@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
-export const ToDoForm = ({addToDo}) => {
-  const [value, setValue] = useState('');
+export const EditToDoForm = ({editToDo, todo}) => {
+  const [value, setValue] = useState(todo.task);
 
   const handleChange = (e) => {
     setValue(e.target.value);
@@ -11,7 +11,7 @@ export const ToDoForm = ({addToDo}) => {
     //console.log(value);
     e.preventDefault();
 
-    addToDo(value);
+    editToDo(value, todo.id);
 
     setValue('');
   };
@@ -23,7 +23,7 @@ export const ToDoForm = ({addToDo}) => {
           <input
             type="text"
             className="list-input w-100"
-            placeholder="Add new list item ..."
+            placeholder="Update task"
             name="newItem"
             onChange={handleChange}
             value={value}

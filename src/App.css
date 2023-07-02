@@ -2,6 +2,12 @@
   border: 2px solid var(--tn-primary);
   padding: 5px 10px;
   border-radius: 5px 10px;
+  font-weight: 500;
+}
+
+.strike-through {
+  color: black;
+  text-decoration: line-through;
 }
 
 .tdl-complete {
@@ -9,6 +15,8 @@
   background-color: var(--tn-primary);
   padding: 5px 10px;
   border-radius: 5px 10px;
+  color: var(--tn-secondary);
+  font-weight: 500;
 }
 
 .list-input {
@@ -29,6 +37,7 @@
   padding: 0;
   margin-top: -7px;
   transition: var(--tn-tansition);
+  border: none;
 }
 
 #add_btn:hover {
@@ -60,6 +69,7 @@
   padding: 10px 15px;
   margin-bottom: 20px;
   cursor: pointer;
+  font-size: 20px;
 }
 
 .tdl-item p{
@@ -71,3 +81,38 @@
   background-color: var(--tn-primary);
 }
 
+.completed .tdl-item-text {
+  text-decoration: line-through;
+  color: black;
+}
+
+.completed span {
+  color: #fff;
+}
+
+.tdl-item-icons {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: var(--tn-secondary);
+  width: 60px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tdl-item-icons i{
+  font-size: 23px;
+}
+
+.tdl-item-icons > .bi {
+  transition: 0.15s ease-in-out;
+}
+
+.tdl-item-icons > .bi:hover {
+  color: #681dfd;
+  cursor: pointer;
+}
+
+.bi-trash {
+  font-size: 23px;
+}
