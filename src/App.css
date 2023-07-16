@@ -79,6 +79,9 @@
 }
 
 .tdl-item-text {
+  height: 36px;
+  display: flex;
+  align-items: center;
   max-width: 100%;
 }
 
