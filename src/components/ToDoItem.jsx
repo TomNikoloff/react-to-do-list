@@ -1,7 +1,7 @@
 export const ToDoItem = ({todo, deleteToDo, toggleComplete,  editToDo}) => {
     return (
         <div className="position-relative">
-            <div onClick={() => toggleComplete(todo.id)} className={`${todo.completed ? `completed tdl-item`: `tdl-item`}`} >
+            <div onClick={() => toggleComplete(todo.id)} className={"tdl-item " + `${todo.completed ? `completed`: ``}`} >
                 <p className="tdl-item-text">
                     <span>{todo.task}</span>
                 </p>
